@@ -9,7 +9,8 @@ layout: default
 	  <div class="toc">
 	    {% for p in site.data.pages %}
 	      {% if p.title %}
-	      <a class="page-link{% if p.url == page.url %} active{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
+	      {% capture purl %}/{{ p.url }}{% endcapture %}
+	      <a class="page-link{% if purl == page.url %} active{% endif %}" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a>
 	      {% endif %}
 	    {% endfor %}
 	  </div>
