@@ -1,0 +1,26 @@
+- title: 首页
+  url: /index.html
+
+- title: 用户
+  url: /users.html
+
+- title: 分享
+  url: /broadcasts.html
+
+- title: 话题
+  url: /topics.html
+
+- title: 收藏
+  url: /favourites.html
+
+- title: 支付
+  url: /credits.html
+
+- title: 举报
+  url: /report.html
+
+- title: 运维
+  url: /admins.html
+
+- title: 表结构
+  url: /tables.html
