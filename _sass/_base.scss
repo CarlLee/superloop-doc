@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6,
 p, blockquote, pre,
 ul, ol, dl, figure,
 %vertical-rhythm {
-    margin-bottom: $spacing-unit / 2;
+    margin:$spacing-unit / 2 0;
 }
 
 
@@ -229,3 +229,6 @@ tr:last-child>td {
     border-bottom: 1px solid #e8e8e8;
 }
 
+h2 {
+    border-bottom: 1px solid #c3c3c3;
+}
