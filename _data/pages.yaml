@@ -13,11 +13,17 @@
 - title: 收藏
   url: favourites.html
 
+- title: 搜索
+  url: search.html
+
 - title: 支付
   url: credits.html
 
 - title: 举报
   url: reports.html
+
+- title: 杂项
+  url: etc.html
 
 - title: 运维
   url: admins.html
