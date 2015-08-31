@@ -3,6 +3,7 @@ layout: page
 title: 用户
 permalink: /users.html
 ---
+
 用户接口
 ========
 
@@ -28,9 +29,9 @@ permalink: /users.html
 | 获取时间线           | GET      | user   | [/users/time_line](#users-timeline)                     |
 | 添加教育经历         | POST     | user   | [/users/education](#users-education-post)               |
 | 删除教育经历         | DELETE   | user   | [/users/education/:id](#users-education-delete)         |
-| 添加工作经历         | POST     | user   | [/users/work_history](#users-work-history-post)     |
+| 添加工作经历         | POST     | user   | [/users/work_history](#users-work-history-post)         |
 | 删除工作经历         | DELETE   | user   | [/users/work_history/:id](#users-work-history-delete)   |
-| 添加用户标签         | POST     | user   | [/users/tags](#users-tags-post)                     |
+| 添加用户标签         | POST     | user   | [/users/tags](#users-tags-post)                         |
 | 删除用户标签         | DELETE   | user   | [/users/tags/:id](#users-tags-delete)                   |
 
 <a name="users-login"></a>
@@ -416,24 +417,24 @@ permalink: /users.html
         "code" : 0,
         "msg" : "success",
         "result" : [{
+            "id" : 123456789,
+            "user" : {
                 "id" : 123456789,
-                "user" : {
-                    "id" : 123456789,
-                    "gender" : 1,
-                    "avatar" : "http://s11.album.sina.com.cn/pic_3/4c543a9d020017zm",
-                    "location" : "北京市 朝阳区",
-                    "nickname" : "毛主席"
-                },
-                "content" : "今天天气不错",
-                "attachments" : [{
-                    "id" : 123456789,
-                    "attachment_type" : "image",
-                    "attachment_url" : "http://s11.album.sina.com.cn/pic_3/4c543a9d020017zm"
-                }],
-                "created" : 1440569734957,
-                "comments_cnt" : 567,
-                "thumbups_cnt" : 700
-            }]
+                "gender" : 1,
+                "avatar" : "http://s11.album.sina.com.cn/pic_3/4c543a9d020017zm",
+                "location" : "北京市 朝阳区",
+                "nickname" : "毛主席"
+            },
+            "content" : "今天天气不错",
+            "attachments" : [{
+                "id" : 123456789,
+                "attachment_type" : "image",
+                "attachment_url" : "http://s11.album.sina.com.cn/pic_3/4c543a9d020017zm"
+            }],
+            "created" : 1440569734957,
+            "comments_cnt" : 567,
+            "thumbups_cnt" : 700
+        }]
     }
 
 #####返回字段说明

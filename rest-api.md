@@ -61,7 +61,7 @@ Superloop API 文档
 | 删除用户标签         | DELETE   | user   | [/users/tags/:id](users.html#users-tags-delete)                   |
 
 
-###分享接口
+###[分享接口](broadcasts.html)
 
 |    接口名    | HTTP方法 |  权限  |                           URL                           |
 | ------------ | -------- | ------ | ------------------------------------------------------- |
@@ -77,10 +77,10 @@ Superloop API 文档
 | 评论点赞     | POST     | user   | [/comments/:id/thumbups](broadcast.html#comments-thumbups-post)       |
 | 取消评论点赞 | DELETE   | owner  | [/comments/:id/thumbups](broadcast.html#comments-thumbups-delete)     |
 
-###话题接口
+###[话题接口](topics.html)
 
-|    接口名    | HTTP方法 |  权限  |                        URL                        |
-| ------------ | -------- | ------ | ------------------------------------------------- |
+|    接口名    | HTTP方法 |  权限  |                             URL                              |
+| ------------ | -------- | ------ | ------------------------------------------------------------ |
 | 发布话题     | POST     | user   | [/topics](topics.html#topics)                                |
 | 修改话题     | PUT      | owner  | [/topics/:id](topics.html#topics-put)                        |
 | 话题详情     | GET      | anyone | [/topics/:id](topics.html#topics-get)                        |
@@ -98,23 +98,25 @@ Superloop API 文档
 | 回复点赞     | POST     | user   | [/replies/:id/thumbups](topics.html#replies-thumbups-post)   |
 | 取消回复点赞 | DELETE   | user   | [/replies/:id/thumbups](topics.html#replies-thumbups-delete) |
 
-###收藏接口
+###[收藏接口](favourites.html)
 
-|  接口名  | HTTP方法 | 权限 |                       URL                        |
-| -------- | -------- | ---- | ------------------------------------------------ |
-| 收藏分享 | POST     | user | [/favourites/broadcasts](#favourites-broadcasts) |
-| 收藏话题 | POST     | user | [/favourites/topics](#favourites-topics)         |
+|     接口名     | HTTP方法 | 权限 |                          URL                          |
+| -------------- | -------- | ---- | ----------------------------------------------------- |
+| 收藏分享       | POST     | user | [/favourites/broadcasts](#favourites-broadcasts-post) |
+| 获取收藏的分享 | GET      | user | [/favourites/broadcasts](#favourites-broadcasts-get)  |
+| 收藏话题       | POST     | user | [/favourites/topics](#favourites-topics-post)         |
+| 获取收藏的话题 | GET      | user | [/favourites/topics](#favourties-topics-get)          |
 
 
-###搜索接口
+###[搜索接口](search.html)
 
-|  接口名  | HTTP方法 |  权限  |                   URL                    |
-| -------- | -------- | ------ | ---------------------------------------- |
-| 搜索用户 | GET      | anyone | [/search/users](#search-users)           |
-| 搜索分享 | GET      | anyone | [/search/broadcasts](#search-broadcasts) |
-| 搜索话题 | GET      | anyone | [/search/topics](#search-topics)         |
+|  接口名  | HTTP方法 |  权限  |                         URL                         |
+| -------- | -------- | ------ | --------------------------------------------------- |
+| 搜索用户 | GET      | anyone | [/search/users](search.html#search-users)           |
+| 搜索分享 | GET      | anyone | [/search/broadcasts](search.html#search-broadcasts) |
+| 搜索话题 | GET      | anyone | [/search/topics](search.html#search-topics)         |
 
-###充值/支付接口
+###[充值/支付接口](credits.html)
 
 |    接口名    | HTTP方法 | 权限 |                  URL                   |
 | ------------ | -------- | ---- | -------------------------------------- |
@@ -125,33 +127,33 @@ Superloop API 文档
 | 获取收支记录 | GET      | user | [/credits/history](credits.html#credits-history)   |
 | 查看余额     | GET      | user | [/credits](credits.html#credits)                   |
 
-###杂项
+###[杂项](etc.html)
 
-|    接口名    | HTTP方法 |  权限  |              URL               |
-| ------------ | -------- | ------ | ------------------------------ |
-| 获取地区列表 | GET      | anyone | [/locations](#locations-get)   |
-| 获取分类列表 | GET      | anyone | [/categories](#categories-get) |
+|    接口名    | HTTP方法 |  权限  |                  URL                   |
+| ------------ | -------- | ------ | -------------------------------------- |
+| 获取地区列表 | GET      | anyone | [/locations](etc.html#locations-get)   |
+| 获取分类列表 | GET      | anyone | [/categories](etc.html#categories-get) |
 
 
-###举报接口
+###[举报接口](reports.html)
 
-| 接口名 | HTTP方法 |  权限  |            URL            |
-| ------ | -------- | ------ | ------------------------- |
+| 接口名 | HTTP方法 |  权限  |                  URL                  |
+| ------ | -------- | ------ | ------------------------------------- |
 | 举报!  | POST     | anyone | [/reports](reports.html#reports-post) |
 
-###运维接口
+###[运维接口](admin.md)
 
-|  接口名  | HTTP方法 |  权限 |                   URL                    |
-| -------- | -------- | ----- | ---------------------------------------- |
-| 获取举报 | GET      | admin | [/reports](#reports-get)                 |
-| 接受举报 | PUT      | admin | [/reports/:id](#reports-put)             |
-| 处理举报 | POST     | admin | [/reports/:id/process](#reports-process) |
-| 添加地区 | POST     | admin | [/locations](#locations-post)            |
-| 更新地区 | PUT      | admin | [/locations/:id](#locations-put)         |
-| 删除地区 | DELETE   | admin | [/locations/:id](#locations-delete)      |
-| 添加分类 | POST     | admin | [/categories](#categories-post)          |
-| 修改分类 | PUT      | admin | [/categories/:id](#categories-put)       |
-| 删除分类 | DELETE   | admin | [/categories/:id](#categories-delete)    |
+|  接口名  | HTTP方法 |  权限 |                           URL                           |
+| -------- | -------- | ----- | ------------------------------------------------------- |
+| 获取举报 | GET      | admin | [/reports](admin.html#reports-get)                      |
+| 接受举报 | PUT      | admin | [/reports/:id](admin.html#reports-put)                  |
+| 处理举报 | POST     | admin | [/reports/:id/process](admin.html#reports-process)      |
+| 添加地区 | POST     | admin | [/locations](admin.html#locations-post)                 |
+| 更新地区 | PUT      | admin | [/locations/:id](admin.html#locations-put)              |
+| 删除地区 | DELETE   | admin | [/locations/:id](admin.htmladmin.html#locations-delete) |
+| 添加分类 | POST     | admin | [/categories](admin.html#categories-post)               |
+| 修改分类 | PUT      | admin | [/categories/:id](admin.html#categories-put)            |
+| 删除分类 | DELETE   | admin | [/categories/:id](admin.html#categories-delete)         |
 
 权限类型解释
 ------------
@@ -163,10 +165,26 @@ Superloop API 文档
 - owner 该资源的所有者可以访问该接口
 - admin 管理员可以访问该接口
 
+<a name="order-format"></a>
+
+排序方式格式
+------------
+
+排序方式的格式为
+
+    {column_name}={order}(,{column_name}={order})*
+
+    column_name: 排序的字段名
+
+    order: asc或者desc
+
+    多个排序条件由逗号,分割 排序顺序按排序字符串中的顺序
+
 <a name="resource-url"></a>
 
 资源URL规则
 -----------
+
 #### 格式
 
     /:resourse_name/:resource_id(/:sub_resource_name/:sub_resource_id)*
@@ -188,6 +206,7 @@ Superloop API 文档
 
 字段规则
 --------
+
 ####日期(date)
     YYYY-mm-dd
 

@@ -164,9 +164,11 @@ permalink: /broadcasts.html
 
 #####参数列表
 
-| 参数名 | 必要 | 类型 |  长度 |  描述  |
-| ------ | ---- | ---- | ----- | ------ |
-| :id    | true | long | 64bit | 分享id |
+| 参数名 |  必要 | 类型 |  长度 | 默认值 |       描述       |
+| ------ | ----- | ---- | ----- | ------ | ---------------- |
+| :id    | true  | long | 64bit |        | 分享id           |
+| pager  | false | int  | 32bit |     20 | 每页所含条目数量 |
+| page   | false | int  | 32bit |      0 | 页码             |
 
 #####返回值
 
@@ -225,7 +227,7 @@ permalink: /broadcasts.html
 
 #####备注
 
-- 只能点赞一次
+- 每个人对同一条分享只能点赞一次
 
 <a name="broadcasts-thumbups-delete"></a>
 
@@ -307,9 +309,11 @@ permalink: /broadcasts.html
 
 #####参数列表
 
-| 参数名 | 必要 | 类型 |  长度 |  描述  |
-| ------ | ---- | ---- | ----- | ------ |
-| :id    | true | long | 64bit | 分享id |
+| 参数名 |  必要 | 类型 |  长度 | 默认值 |       描述       |
+| ------ | ----- | ---- | ----- | ------ | ---------------- |
+| :id    | true  | long | 64bit |        | 分享id           |
+| pager  | false | int  | 32bit |     20 | 每页所含条目数量 |
+| page   | false | int  | 32bit |      0 | 页码             |
 
 #####返回值
 
@@ -405,6 +409,8 @@ permalink: /broadcasts.html
 | msg    | string | 响应消息 |
 
 #####备注
+
+- 每个人对同一条评论只能点赞一次
 
 <a name="comments-thumbups-delete"></a>
 

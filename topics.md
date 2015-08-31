@@ -17,9 +17,10 @@ permalink: /topics.html
 | 取消关注     | DELETE   | user   | [/topics/:id/follow](#topics-follow-delete)       |
 | 添加分类     | POST     | owner  | [/topics/:id/tags](#topics-tags-post)             |
 | 删除分类     | DELETE   | owner  | [/topics/:id/tags/:tag_id](#topics-tags-delete)   |
-| 查看点赞用户 | GET      | anyone | [/topics/:id/thumbups](#topics-thumbups-get)       |
+| 查看点赞用户 | GET      | anyone | [/topics/:id/thumbups](#topics-thumbups-get)      |
 | 话题点赞     | POST     | user   | [/topics/:id/thumbups](#topics-thumbups-post)     |
 | 取消点赞     | DELETE   | user   | [/topics/:id/thumbups](#topics-thumbups-delete)   |
+| 查看话题回复 | GET      | anyone | [/topics/:id/replies](#topics-replies-get)        |
 | 回复话题     | POST     | user   | [/topics/:id/replies](#topics-replies-post)       |
 | 修改回复     | PUT      | owner  | [/replies/:id](#replies-put)                      |
 | 删除回复*    | DELETE   | owner  | [/replies/:id](#replies-delete)                   |
@@ -323,9 +324,11 @@ permalink: /topics.html
 
 #####参数列表
 
-| 参数名 | 必要 | 类型 |  长度 |  描述  |
-| ------ | ---- | ---- | ----- | ------ |
-| :id    | true | long | 64bit | 话题id |
+| 参数名 |  必要 | 类型 |  长度 | 默认值 |       描述       |
+| ------ | ----- | ---- | ----- | ------ | ---------------- |
+| :id    | true  | long | 64bit |        | 话题id           |
+| pager  | false | int  | 32bit |     20 | 每页所含条目数量 |
+| page   | false | int  | 32bit |      0 | 页码             |
 
 #####返回值
 
@@ -382,6 +385,8 @@ permalink: /topics.html
 | msg    | string | 响应消息 |
 
 #####备注
+
+- 每个人对同一条话题只能点赞一次
 
 <a name="topics-thumbups-delete"></a>
 
