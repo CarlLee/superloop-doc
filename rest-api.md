@@ -6,10 +6,12 @@ permalink: /index.html
 
 Superloop API 文档
 ==================
+
 > P.S. 带*项目为未确定项目
 
 协议格式
 --------
+
 - RESTful Web Service
 - 数据格式为JSON
 - 为防止session hijacking 强制使用https协议
@@ -33,9 +35,9 @@ Superloop API 文档
 
 ###[用户接口](users.html)
 
-|        接口名        | HTTP方法 |  权限  |                           URL                           |
-| -------------------- | -------- | ------ | ------------------------------------------------------- |
-| 用户登录             | POST     | anyone | [/users/login](users.html#users-login)                            |
+|        接口名        | HTTP方法 |  权限  |                                URL                                |
+| -------------------- | -------- | ------ | ----------------------------------------------------------------- |
+| 用户登录             | POST     | anyone | [/users/check_credentials](users.html#users-check-credentials)    |
 | 用户注册             | POST     | anyone | [/users/register](users.html#users-register)                      |
 | 短信验证请求         | GET      | anyone | [/users/verify_cellphone](users.html#users-verify-cellphone-get)  |
 | 短信验证             | POST     | anyone | [/users/verify_cellphone](users.html#users-verify-cellphone-post) |
@@ -132,7 +134,7 @@ Superloop API 文档
 |    接口名    | HTTP方法 |  权限  |                  URL                   |
 | ------------ | -------- | ------ | -------------------------------------- |
 | 获取地区列表 | GET      | anyone | [/locations](etc.html#locations-get)   |
-| 获取分类列表 | GET      | anyone | [/categories](etc.html#categories-get) |
+| 获取分类列表 | GET      | anyone | [/tags](etc.html#tags-get) |
 
 
 ###[举报接口](reports.html)
@@ -230,20 +232,24 @@ Superloop API 文档
 响应代码
 --------
 
-| 代码 |         原因         |                    消息                    |
-| ---- | -------------------- | ------------------------------------------ |
-|    0 | 请求成功             | success                                    |
-|      | 参数格式错误         | invalid parameters                         |
-|      | 缺少必填字段         | required field missing                     |
-|      | 请求的id不存在       | requested id does not exist                |
-|      | 没有权限             | no authorization                           |
-|      | 用户未激活           | user not yet activated                     |
-|      | 用户名或密码错误     | username or password is wrong              |
-|      | 用户名被占用         | username in use                            |
-|      | 用户不存在           | user does not exist                        |
-|      | 手机号码被占用       | cellphone in use                           |
-|      | 验证码错误或过期     | verification code is wrong or have expired |
-|      | 已达到频率限制       | rate limit reached                         |
-|      | 每个项目只能点赞一次 | only one thumbup is allowed per item       |
+| 代码 | HTTP状态码 |       原因       |                    消息                    |
+| ---- | ---------- | ---------------- | ------------------------------------------ |
+|    0 |        200 | 请求成功         | success                                    |
+|    1 |        400 | 参数格式错误     | invalid parameters                         |
+|    2 |        400 | 缺少必填字段     | required field missing                     |
+|    3 |        404 | 请求的id不存在   | requested id does not exist                |
+|    4 |        403 | 没有权限         | no authorization                           |
+|    5 |        403 | 用户未激活       | user not yet activated                     |
+|    6 |        403 | 用户名或密码错误 | username or password is wrong              |
+|    7 |        409 | 用户名被占用     | username in use                            |
+|    8 |        409 | 手机号码被占用   | cellphone in use                           |
+|    9 |        304 | 验证码错误或过期 | verification code is wrong or have expired |
+|   10 |        429 | 已达到频率限制   | rate limit reached                         |
+|   11 |        404 | 资源未找到       | resource not found                         |
+|   12 |        304 | 操作失败         | operation failure                          |
+|   13 |        405 | 方法不允许       | method not allowed                         |
+|   14 |        500 | 服务器内部错误   | internal error                             |
+
+
 
 

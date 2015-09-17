@@ -7,34 +7,34 @@ permalink: /users.html
 用户接口
 ========
 
-|        接口名        | HTTP方法 |  权限  |                           URL                           |
-| -------------------- | -------- | ------ | ------------------------------------------------------- |
-| 用户登录             | POST     | anyone | [/users/login](#users-login)                            |
-| 用户注册             | POST     | anyone | [/users/register](#users-register)                      |
-| 短信验证请求         | GET      | anyone | [/users/verify_cellphone](#users-verify-cellphone-get)  |
-| 短信验证             | POST     | anyone | [/users/verify_cellphone](#users-verify-cellphone-post) |
-| 重置密码请求         | GET      | anyone | [/users/reset_password](#users-reset-password-get)      |
-| 重置密码             | POST     | anyone | [/users/reset_password](#users-reset-password-post)     |
-| 获取用户资料         | GET      | anyone | [/users/:id](#users-get)                                |
-| 获取用户关注         | GET      | anyone | [/users/:id/follows](#users-follows)                    |
-| 获取用户粉丝         | GET      | anyone | [/users/:id/followers](#users-followers)                |
-| 获取用户发布的分享   | GET      | anyone | [/users/:id/broadcasts](#users-broadcasts)              |
-| 获取用户分享评论     | GET      | anyone | [/users/:id/comments](#users-comments)                  |
-| 获取用户发布的话题   | GET      | anyone | [/users/:id/topics](#users-topics)                      |
-| 获取用户关注的话题   | GET      | anyone | [/users/:id/topics/followed](#users-topics-followed)    |
-| 获取用户回复过的话题 | GET      | anyone | [/users/:id/topics/replied](#users-topics-replied)      |
-| 修改用户资料         | PUT      | user   | [/users](#users-put)                                    |
-| 关注用户             | POST     | user   | [/users/follow](#users-follow)                          |
-| 取消关注             | POST     | user   | [/users/unfollow](#users-unfollow)                      |
-| 获取时间线           | GET      | user   | [/users/time_line](#users-timeline)                     |
-| 添加教育经历         | POST     | user   | [/users/education](#users-education-post)               |
-| 删除教育经历         | DELETE   | user   | [/users/education/:id](#users-education-delete)         |
-| 添加工作经历         | POST     | user   | [/users/work_history](#users-work-history-post)         |
-| 删除工作经历         | DELETE   | user   | [/users/work_history/:id](#users-work-history-delete)   |
-| 添加用户标签         | POST     | user   | [/users/tags](#users-tags-post)                         |
-| 删除用户标签         | DELETE   | user   | [/users/tags/:id](#users-tags-delete)                   |
+|        接口名        | HTTP方法 |  权限  |                              URL                               |
+| -------------------- | -------- | ------ | -------------------------------------------------------------- |
+| 用户登录             | POST     | anyone | [/users/check_credentials](users.html#users-check-credentials) |
+| 用户注册             | POST     | anyone | [/users/register](#users-register)                             |
+| 短信验证请求         | GET      | user   | [/users/verify_cellphone](#users-verify-cellphone-get)         |
+| 短信验证             | POST     | user   | [/users/verify_cellphone](#users-verify-cellphone-post)        |
+| 重置密码请求         | GET      | anyone | [/users/reset_password](#users-reset-password-get)             |
+| 重置密码             | POST     | anyone | [/users/reset_password](#users-reset-password-post)            |
+| 获取用户资料         | GET      | anyone | [/users/:id](#users-get)                                       |
+| 获取用户关注         | GET      | anyone | [/users/:id/follows](#users-follows)                           |
+| 获取用户粉丝         | GET      | anyone | [/users/:id/followers](#users-followers)                       |
+| 获取用户发布的分享   | GET      | anyone | [/users/:id/broadcasts](#users-broadcasts)                     |
+| 获取用户分享评论     | GET      | anyone | [/users/:id/comments](#users-comments)                         |
+| 获取用户发布的话题   | GET      | anyone | [/users/:id/topics](#users-topics)                             |
+| 获取用户关注的话题   | GET      | anyone | [/users/:id/topics/followed](#users-topics-followed)           |
+| 获取用户回复过的话题 | GET      | anyone | [/users/:id/topics/replied](#users-topics-replied)             |
+| 修改用户资料         | PUT      | user   | [/users](#users-put)                                           |
+| 关注用户             | POST     | user   | [/users/follow](#users-follow)                                 |
+| 取消关注             | POST     | user   | [/users/unfollow](#users-unfollow)                             |
+| 获取时间线           | GET      | user   | [/users/time_line](#users-timeline)                            |
+| 添加教育经历         | POST     | user   | [/users/education](#users-education-post)                      |
+| 删除教育经历         | DELETE   | user   | [/users/education/:id](#users-education-delete)                |
+| 添加工作经历         | POST     | user   | [/users/work_history](#users-work-history-post)                |
+| 删除工作经历         | DELETE   | user   | [/users/work_history/:id](#users-work-history-delete)          |
+| 添加用户标签         | POST     | user   | [/users/tags](#users-tags-post)                                |
+| 删除用户标签         | DELETE   | user   | [/users/tags/:id](#users-tags-delete)                          |
 
-<a name="users-login"></a>
+<a name="users-check-credentials"></a>
 
 用户登录
 -------
@@ -43,7 +43,7 @@ permalink: /users.html
 
 #####URL
 
-    POST /users/login
+    POST /users/check_credentials
 
 #####参数列表
 
@@ -155,9 +155,10 @@ permalink: /users.html
 
 #####参数列表
 
-| 参数名 | 必要 |  类型  | 长度 |     描述     |
-| ------ | ---- | ------ | ---- | ------------ |
-| code   | true | string |    6 | 收到的验证码 |
+|  参数名   | 必要 |  类型  | 长度 |       描述       |
+| --------- | ---- | ------ | ---- | ---------------- |
+| code      | true | string |    6 | 收到的验证码     |
+| cellphone | true | String |   11 | 需要验证的手机号 |
 
 #####返回值
 
@@ -191,9 +192,10 @@ permalink: /users.html
 
 #####参数列表
 
-|  参数名  | 必要 |  类型  | 长度 |       描述       |
-| -------- | ---- | ------ | ---- | ---------------- |
-| username | true | string | 4~60 | 重置密码的用户名 |
+|  参数名   | 必要 |  类型  | 长度 |       描述       |
+| --------- | ---- | ------ | ---- | ---------------- |
+| username  | true | string | 4~60 | 重置密码的用户名 |
+| cellphone | true | String | 11   | 需要验证的手机号 |
 
 #####返回值
 
@@ -226,9 +228,11 @@ permalink: /users.html
 
 #####参数列表
 
-| 参数名 | 必要 |  类型  | 长度 |     描述     |
-| ------ | ---- | ------ | ---- | ------------ |
-| code   | true | string |    6 | 收到的验证码 |
+|  参数名   | 必要 |  类型  | 长度 |       描述       |
+| --------- | ---- | ------ | ---- | ---------------- |
+| code      | true | string | 6    | 收到的验证码     |
+| cellphone | true | String | 11   | 需要验证的手机号 |
+| password  | true | string | 4~60 | 需要重置的密码   |
 
 #####返回值
 

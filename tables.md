@@ -26,6 +26,7 @@ users表
 | gender       | TINYINT                     | 性别     |
 | avatar       | VARCHAR(2083)               | 头像URL  |
 | cellphone(U) | VARCHAR(11)                 | 手机号码 |
+| phonenum_verified | tinyint(1)             | 手机号码认证 |
 | location_id* | INT                         | 地点id   |
 | bio          | VARCHAR(2047)               | 简介     |
 | role         | ENUM('user','admin','root') | 用户角色 |
@@ -75,7 +76,7 @@ work_history表
 | position   | VARCHAR(255) | 部门/职位  |
 | location   | VARCHAR(255) | 所在地     |
 | start_date | DATE         | 开始时间   |
-| end_date   | DATE         | 结束时间   |
+| end_date   | DATE         | u   |
 
 broadcasts表
 ------------
@@ -291,3 +292,34 @@ reports表
 - new 新举报
 - processing 举报处理中
 - processed 举报处理完成
+
+cellphonecode表
+---------------
+>短信验证表
+| 字段名      | 类型        | 说明               |
+| id!         | INT         | 验证码ID           |
+| cellphone   | VARCHAR(11) | 接收验证码的手机号 |
+| remoteaddr  | VARCHAr(50) | 点击发送的IP地址   |
+| verifycode  | VARCHAR(6)  | 验证码             |
+| created | DATE        | 发送时间           |
+| verifycount | INT         | 验证码被访问次数   |
+
+
+user_follows表
+---------------
+>关注人关联表
+| 字段名            | 类型     | 说明       |
+| user_id          | INT     | 用户ID     |
+| follow_user_id   | INT      | 关注用户ID |
+
+user_followers表
+--------
+
+> 用户粉丝表
+
+|    字段名        |                  类型                 |        说明        |
+| ------------    | ------------------------------------- | ------------------ |
+| user_id         | INT                                   | 用户id             |
+| follower_user_id | INT                                   | 举报用户id         |
+
+
